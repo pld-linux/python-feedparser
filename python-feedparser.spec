@@ -9,7 +9,6 @@ Source0:	http://dl.sourceforge.net/feedparser/feedparser-%{version}.zip
 # Source0-md5:	f95db0d0e8832197c40a90f517546e21
 URL:		http://feedparser.org/
 BuildRequires:	python-devel >= 1:2.3.0
-BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
