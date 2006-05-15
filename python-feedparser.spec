@@ -1,12 +1,12 @@
 Summary:	Feed Parser package for Python
 Summary(pl):	Biblioteka Feed Parser dla Pythona
 Name:		python-feedparser
-Version:	3.3
+Version:	4.1
 Release:	1
 License:	Python Software Foundation License
 Group:		Libraries/Python
 Source0:	http://dl.sourceforge.net/feedparser/feedparser-%{version}.zip
-# Source0-md5:	f95db0d0e8832197c40a90f517546e21
+# Source0-md5:	7ab1140c1e29d4cd52ab20fa7b1f8640
 URL:		http://feedparser.org/
 BuildRequires:	python-devel >= 1:2.3.0
 %pyrequires_eq	python-modules
@@ -20,7 +20,7 @@ This package provides means for parsing RSS and Atom feeds in Python.
 Ten pakiet umo¿liwia parsowanie ¼róde³ RSS i Atom w Pythonie.
 
 %prep
-%setup -qn feedparser
+%setup -qc
 
 %build
 python setup.py build
@@ -28,7 +28,13 @@ python setup.py build
 %install
 rm -rf $RPM_BUILD_ROOT
 
-python setup.py install --optimize=2 --root=$RPM_BUILD_ROOT
+python setup.py install \
+	--optimize=2 \
+	--root=$RPM_BUILD_ROOT
+
+%py_ocomp $RPM_BUILD_ROOT%{py_sitescriptdir}
+%py_comp $RPM_BUILD_ROOT%{py_sitescriptdir}
+
 find $RPM_BUILD_ROOT%{py_sitescriptdir} -name "*.py" | xargs rm
 
 %clean
