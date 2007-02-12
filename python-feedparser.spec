@@ -1,5 +1,5 @@
 Summary:	Feed Parser package for Python
-Summary(pl):	Biblioteka Feed Parser dla Pythona
+Summary(pl.UTF-8):   Biblioteka Feed Parser dla Pythona
 Name:		python-feedparser
 Version:	4.1
 Release:	1
@@ -16,8 +16,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 This package provides means for parsing RSS and Atom feeds in Python.
 
-%description -l pl
-Ten pakiet umoøliwia parsowanie ºrÛde≥ RSS i Atom w Pythonie.
+%description -l pl.UTF-8
+Ten pakiet umo≈ºliwia parsowanie ≈∫r√≥de≈Ç RSS i Atom w Pythonie.
 
 %prep
 %setup -qc
