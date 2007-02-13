@@ -1,5 +1,5 @@
 Summary:	Feed Parser package for Python
-Summary(pl.UTF-8):   Biblioteka Feed Parser dla Pythona
+Summary(pl.UTF-8):	Biblioteka Feed Parser dla Pythona
 Name:		python-feedparser
 Version:	4.1
 Release:	1
