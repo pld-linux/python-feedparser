@@ -2,7 +2,7 @@ Summary:	Feed Parser package for Python
 Summary(pl.UTF-8):	Biblioteka Feed Parser dla Pythona
 Name:		python-feedparser
 Version:	4.1
-Release:	1
+Release:	2
 License:	Python Software Foundation License
 Group:		Libraries/Python
 Source0:	http://dl.sourceforge.net/feedparser/feedparser-%{version}.zip
