@@ -9,6 +9,7 @@ Source0:	http://dl.sourceforge.net/feedparser/feedparser-%{version}.zip
 # Source0-md5:	7ab1140c1e29d4cd52ab20fa7b1f8640
 URL:		http://feedparser.org/
 BuildRequires:	python-devel >= 1:2.3.0
+BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -17,18 +18,18 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This package provides means for parsing RSS and Atom feeds in Python.
 
 %description -l pl.UTF-8
-Ten pakiet umożliwia parsowanie źródeł RSS i Atom w Pythonie.
+Ten pakiet umożliwia analizę źródeł RSS i Atom w Pythonie.
 
 %prep
 %setup -qc
 
 %build
-python setup.py build
+%{__python} setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-python setup.py install \
+%{__python} setup.py install \
 	--optimize=2 \
 	--root=$RPM_BUILD_ROOT
 
