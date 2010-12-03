@@ -5,11 +5,12 @@ Version:	4.1
 Release:	5
 License:	Python Software Foundation License
 Group:		Libraries/Python
-Source0:	http://dl.sourceforge.net/feedparser/feedparser-%{version}.zip
+Source0:	http://downloads.sourceforge.net/feedparser/feedparser-%{version}.zip
 # Source0-md5:	7ab1140c1e29d4cd52ab20fa7b1f8640
 URL:		http://feedparser.org/
 BuildRequires:	python-devel >= 1:2.3.0
 BuildRequires:	rpm-pythonprov
+BuildRequires:	rpmbuild(macros) >= 1.219
 BuildRequires:	unzip
 %pyrequires_eq	python-modules
 BuildArch:	noarch
@@ -37,7 +38,7 @@ rm -rf $RPM_BUILD_ROOT
 %py_ocomp $RPM_BUILD_ROOT%{py_sitescriptdir}
 %py_comp $RPM_BUILD_ROOT%{py_sitescriptdir}
 
-find $RPM_BUILD_ROOT%{py_sitescriptdir} -name "*.py" | xargs rm
+%py_postclean
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -45,4 +46,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README
-%{py_sitescriptdir}/*
+%{py_sitescriptdir}/feedparser.py[co]
+%{py_sitescriptdir}/feedparser-*.egg-info
