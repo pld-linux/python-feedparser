@@ -3,12 +3,12 @@
 %bcond_with	tests	# perform "make test" (3 tests fail)
 
 %define 	module	feedparser
-Summary:	Feed Parser package for Python
+Summary:	Parse RSS and Atom feeds in Python
 Summary(pl.UTF-8):	Biblioteka Feed Parser dla Pythona
 Name:		python-%{module}
 Version:	5.1.2
 Release:	1
-License:	PSF
+License:	BSD
 Group:		Libraries/Python
 Source0:	http://feedparser.googlecode.com/files/feedparser-%{version}.tar.bz2
 # Source0-md5:	9f88692c7c1af1d47839eb2025984975
@@ -21,7 +21,11 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This package provides means for parsing RSS and Atom feeds in Python.
+Universal Feed Parser is a Python module for downloading and parsing
+syndicated feeds. It can handle RSS 0.90, Netscape RSS 0.91, Userland
+RSS 0.91, RSS 0.92, RSS 0.93, RSS 0.94, RSS 1.0, RSS 2.0, Atom 0.3,
+Atom 1.0, and CDF feeds. It also parses several popular extension
+modules, including Dublin Core and Apple's iTunes extensions.
 
 %description -l pl.UTF-8
 Ten pakiet umożliwia analizę źródeł RSS i Atom w Pythonie.
