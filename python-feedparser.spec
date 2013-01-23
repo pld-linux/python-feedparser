@@ -1,18 +1,22 @@
+#
+# Conditional build:
+%bcond_with	tests	# perform "make test" (3 tests fail)
+
+%define 	module	feedparser
 Summary:	Feed Parser package for Python
 Summary(pl.UTF-8):	Biblioteka Feed Parser dla Pythona
-Name:		python-feedparser
-Version:	4.1
-Release:	5
-License:	Python Software Foundation License
+Name:		python-%{module}
+Version:	5.1.2
+Release:	1
+License:	PSF
 Group:		Libraries/Python
-Source0:	http://downloads.sourceforge.net/feedparser/feedparser-%{version}.zip
-# Source0-md5:	7ab1140c1e29d4cd52ab20fa7b1f8640
+Source0:	http://feedparser.googlecode.com/files/feedparser-%{version}.tar.bz2
+# Source0-md5:	9f88692c7c1af1d47839eb2025984975
 URL:		http://feedparser.org/
 BuildRequires:	python-devel >= 1:2.3.0
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
-BuildRequires:	unzip
-%pyrequires_eq	python-modules
+Requires:	python-modules
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -23,21 +27,25 @@ This package provides means for parsing RSS and Atom feeds in Python.
 Ten pakiet umożliwia analizę źródeł RSS i Atom w Pythonie.
 
 %prep
-%setup -qc
+%setup -q -n %{module}-%{version}
 
 %build
 %{__python} setup.py build
 
+%if %{with tests}
+cd %{module}
+PYTHONPATH=build %{__python} feedparsertest.py
+%endif
+
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %{__python} setup.py install \
+	--skip-build \
 	--optimize=2 \
 	--root=$RPM_BUILD_ROOT
 
 %py_ocomp $RPM_BUILD_ROOT%{py_sitescriptdir}
 %py_comp $RPM_BUILD_ROOT%{py_sitescriptdir}
-
 %py_postclean
 
 %clean
