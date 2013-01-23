@@ -53,6 +53,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README
+%doc LICENSE NEWS README
 %{py_sitescriptdir}/feedparser.py[co]
 %{py_sitescriptdir}/feedparser-*.egg-info
