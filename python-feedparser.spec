@@ -62,12 +62,12 @@ Ten pakiet umożliwia analizę źródeł RSS i Atom w Pythonie.
 %build
 
 %if %{with python2}
-%{__python} setup.py build --build-base build-2
+%py_build
 %{?with_tests:cd feedparser; PYTHONPATH=../build-2 %{__python} feedparsertest.py; cd ..}
 %endif
 
 %if %{with python3}
-%{__python3} setup.py build --build-base build-3
+%py3_build
 %{?with_tests:cd feedparser; PYTHONPATH=../build-3 %{__python} feedparsertest.py; cd ..}
 %endif
 
@@ -75,11 +75,7 @@ Ten pakiet umożliwia analizę źródeł RSS i Atom w Pythonie.
 rm -rf $RPM_BUILD_ROOT
 
 %if %{with python2}
-%{__python} setup.py \
-        build --build-base build-2 \
-        install --skip-build \
-        --optimize=2 \
-        --root=$RPM_BUILD_ROOT
+%py_install
 
 %py_ocomp $RPM_BUILD_ROOT%{py_sitescriptdir}
 %py_comp $RPM_BUILD_ROOT%{py_sitescriptdir}
@@ -87,11 +83,7 @@ rm -rf $RPM_BUILD_ROOT
 %endif
 
 %if %{with python3}
-%{__python3} setup.py \
-        build --build-base build-3 \
-        install --skip-build \
-        --optimize=2 \
-        --root=$RPM_BUILD_ROOT
+%py3_install
 %endif
 
 %clean
