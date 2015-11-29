@@ -16,7 +16,7 @@ Source0:	http://feedparser.googlecode.com/files/feedparser-%{version}.tar.bz2
 # Source0-md5:	6fb6372a1dc2f56d4d79d740b8f49f25
 URL:		http://feedparser.org/
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.219
+BuildRequires:	rpmbuild(macros) >= 1.710
 %if %{with python2}
 BuildRequires:	python-devel >= 1:2.3.0
 BuildRequires:	python-distribute
