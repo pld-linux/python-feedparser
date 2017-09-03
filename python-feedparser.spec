@@ -8,13 +8,13 @@
 Summary:	Parse RSS and Atom feeds in Python
 Summary(pl.UTF-8):	Biblioteka Feed Parser dla Pythona
 Name:		python-%{module}
-Version:	5.1.3
-Release:	6
+Version:	5.2.1
+Release:	1
 License:	BSD
 Group:		Libraries/Python
-Source0:	http://feedparser.googlecode.com/files/feedparser-%{version}.tar.bz2
-# Source0-md5:	6fb6372a1dc2f56d4d79d740b8f49f25
-URL:		http://feedparser.org/
+Source0:	https://github.com/kurtmckee/feedparser/archive/%{version}.tar.gz
+# Source0-md5:	885d800496ffd538920960b9dbc45faf
+URL:		https://github.com/kurtmckee/feedparser
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.710
 %if %{with python2}
@@ -92,7 +92,7 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with python2}
 %files
 %defattr(644,root,root,755)
-%doc LICENSE NEWS README
+%doc LICENSE NEWS README.rst
 %{py_sitescriptdir}/feedparser.py[co]
 %{py_sitescriptdir}/feedparser-*.egg-info
 %endif
@@ -100,7 +100,7 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with python3}
 %files -n python3-%{module}
 %defattr(644,root,root,755)
-%doc LICENSE NEWS README
+%doc LICENSE NEWS README.rst
 %{py3_sitescriptdir}/feedparser.py
 %{py3_sitescriptdir}/__pycache__/feedparser.*.py[co]
 %{py3_sitescriptdir}/feedparser-*.egg-info
