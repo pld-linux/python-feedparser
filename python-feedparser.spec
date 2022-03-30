@@ -9,7 +9,7 @@ Summary:	Parse RSS and Atom feeds in Python
 Summary(pl.UTF-8):	Biblioteka Feed Parser dla Pythona
 Name:		python-%{module}
 Version:	5.2.1
-Release:	6
+Release:	7
 License:	BSD
 Group:		Libraries/Python
 Source0:	https://github.com/kurtmckee/feedparser/archive/%{version}.tar.gz
