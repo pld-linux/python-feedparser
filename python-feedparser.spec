@@ -6,7 +6,7 @@
 
 %define 	module	feedparser
 Summary:	Parse RSS and Atom feeds in Python
-Summary(pl.UTF-8):	Biblioteka Feed Parser dla Pythona
+Summary(pl.UTF-8):	Analiza źródeł RSS i Atom dla Pythona
 Name:		python-%{module}
 Version:	5.2.1
 Release:	7
@@ -37,11 +37,15 @@ Atom 1.0, and CDF feeds. It also parses several popular extension
 modules, including Dublin Core and Apple's iTunes extensions.
 
 %description -l pl.UTF-8
-Ten pakiet umożliwia analizę źródeł RSS i Atom w Pythonie.
+Universal Feed Parser to moduł Pythona do pobierania i analizy
+syndykowanych źródeł (feedów). Obsługuje RSS 0.90, Netscape RSS 0.91,
+Userland RSS 0.91, RSS 0.92, RSS 0.93, RSS 0.94, RSS 1.0, RSS 2.0,
+Atom 0.3, Atom 1.0 oraz CDF. Potrafi obsłużyć także kilka popularnych
+modułów rozszerzeń, w tym rozszerzenia Dublin Core oraz Apple iTunes.
 
 %package -n python3-%{module}
 Summary:	Parse RSS and Atom feeds in Python
-Summary(pl.UTF-8):	Biblioteka Feed Parser dla Pythona
+Summary(pl.UTF-8):	Analiza źródeł RSS i Atom dla Pythona
 Group:		Libraries/Python
 Requires:	python3-modules
 
@@ -53,7 +57,11 @@ Atom 1.0, and CDF feeds. It also parses several popular extension
 modules, including Dublin Core and Apple's iTunes extensions.
 
 %description -n python3-%{module} -l pl.UTF-8
-Ten pakiet umożliwia analizę źródeł RSS i Atom w Pythonie.
+Universal Feed Parser to moduł Pythona do pobierania i analizy
+syndykowanych źródeł (feedów). Obsługuje RSS 0.90, Netscape RSS 0.91,
+Userland RSS 0.91, RSS 0.92, RSS 0.93, RSS 0.94, RSS 1.0, RSS 2.0,
+Atom 0.3, Atom 1.0 oraz CDF. Potrafi obsłużyć także kilka popularnych
+modułów rozszerzeń, w tym rozszerzenia Dublin Core oraz Apple iTunes.
 
 %prep
 %setup -q -n %{module}-%{version}
